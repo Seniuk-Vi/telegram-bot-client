@@ -1,0 +1,14 @@
+.nav-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-main a {
+    color: black;
+    margin: 0 10px; /* Adjust the value based on desired space */
+}
+
+.nav-main a:hover {
+    color: darkcyan;
+}

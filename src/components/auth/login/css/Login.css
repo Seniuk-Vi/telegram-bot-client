@@ -1,0 +1,25 @@
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: auto;
+    padding: 15px;
+}
+.login-form-item{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.login-form-item-input{
+    width: auto;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.login-form-button{
+    width: auto;
+    margin-top: 10px;
+}

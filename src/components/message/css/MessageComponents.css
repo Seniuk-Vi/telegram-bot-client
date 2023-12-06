@@ -1,0 +1,19 @@
+.message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.message.user {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.message.assistant {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.message.admin {
+    text-align: right;
+}
