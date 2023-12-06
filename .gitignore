@@ -10,7 +10,6 @@
 
 # production
 /build
-
 ### IntelliJ IDEA ###
 .idea
 *.iws
