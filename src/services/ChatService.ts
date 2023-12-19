@@ -9,7 +9,6 @@ export interface ChatEntity {
 }
 
 export interface MessageEntity {
-    id: number;
     content: string;
     role: ChatRole;
     created: Date;

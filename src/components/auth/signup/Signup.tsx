@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, Form, Input, message} from 'antd';
 import './css/Signup.css';
-import { useAuth } from '../../../utils/IAuthContext'; // Adjust the path to your AuthContext
+import { useAuth } from '../../../utils/IAuthContext';
 import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
@@ -13,6 +13,8 @@ const Signup = () => {
         try {
             await register(email, password, confirmPassword);
             console.log('Success:', values);
+            // show success message
+            message.success('Sign-up successful.');
             // Navigate to the logged-in area of your application here
             navigate('/auth');
         } catch (error) {
@@ -26,42 +28,41 @@ const Signup = () => {
         console.log('Failed:', errorInfo);
     }
 
+
     return (
-        <Form
-            name={"Signup"}
-            initialValues={{remember: true}}
-            onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
+        <Form className={"signup-form"}
+              name={"Signup"}
+              initialValues={{remember: true}}
+              onFinish={onFinish}
+              onFinishFailed={onFinishFailed}
         >
-            <Form.Item
-                label={"Email"}
-                name={"email"}
-                rules={[{required: true, message: "Please input your email"}]}>
-                <Input/>
+            <Form.Item className={"signup-form-item"}
+                       label={"Email"}
+                       name={"email"}
+                       rules={[{required: true, message: "Please input your email"}]}>
+                <Input className={"signup-form-item-input"}/>
             </Form.Item>
-            <Form.Item
-                label={"Password"}
-                name={"password"}
-                rules={[{required: true, message: "Please input your password"}]}>
-                <Input.Password/>
+            <Form.Item className={"signup-form-item"}
+                       label={"Password"}
+                       name={"password"}
+                       rules={[{required: true, message: "Please input your password"}]}>
+                <Input.Password className={"signup-form-item-input"}/>
             </Form.Item>
-            <Form.Item
-                label={"Confirm password"}
-                name={"confirmPassword"}
-                rules={[{required: true, message: "Please repeat your password"}]}>
-                <Input.Password/>
+            <Form.Item className={"signup-form-item"}
+                       label={"Confirm password"}
+                       name={"confirmPassword"}
+                       rules={[{required: true, message: "Please repeat your password"}]}>
+                <Input.Password className={"signup-form-item-input"}/>
             </Form.Item>
 
-            <Button
-                type={"primary"}
-                htmlType={"submit"}
+            <Button className={"signup-form-button"}
+                    type={"primary"}
+                    htmlType={"submit"}
             >
                 Signup
             </Button>
         </Form>
-
     );
-
 }
 
 export default Signup;
