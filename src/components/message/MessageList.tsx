@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {ChatEntity, getChatMessages, MessageEntity} from '../../services/ChatService';
 import {useAuth} from '../../utils/IAuthContext';
 import MessageComponent from './MessageComponent';
-import './css/MessageList.css';
 
 interface MessagesProps {
     chat: ChatEntity | null;

@@ -1,4 +1,5 @@
 import './App.css';
+import './dark-theme.css';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {Layout} from "antd";
 import HeaderComponent from "./components/header/HeaderComponent";

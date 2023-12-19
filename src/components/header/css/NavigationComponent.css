@@ -5,10 +5,6 @@
 }
 
 .nav-main a {
-    color: black;
-    margin: 0 10px; /* Adjust the value based on desired space */
-}
-
-.nav-main a:hover {
-    color: darkcyan;
+    color: var(--secondary-text-color);
+    margin: 0 10px;
 }

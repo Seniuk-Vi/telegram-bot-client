@@ -3,8 +3,7 @@
 This is a Front-end application for the telegram-bot.
 
 ### Improvements can be done
-- [ ] fix css in ChatPage (display input above all messages)
-- [ ] 
+- [ ] add scroll to the bottom of the chat
 
 
 ## Environment variables

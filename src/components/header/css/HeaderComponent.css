@@ -1,6 +1,6 @@
 .header {
-    background-color: lightslategray;
-    color: black;
+    background-color: var(--header-color);
+    color: var(--secondary-text-color);
     font: bold 20px sans-serif;
     display: flex;
     flex-wrap: wrap;

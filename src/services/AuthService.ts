@@ -26,7 +26,7 @@ export async function signUp(request: UserRequest): Promise<UserResponse> {
 
     if (response.ok) {
         return await response.json();
-    } else {
+    }else {
         throw new Error('Sign-up failed.');
     }
 }

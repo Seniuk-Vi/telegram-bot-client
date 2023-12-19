@@ -1,10 +1,7 @@
 import ChatPage from "../chat/ChatPage";
 
 const HomePage = () => (
-
-    <div>
-        <ChatPage/>
-    </div>
+    <ChatPage/>
 );
 
 export default HomePage;

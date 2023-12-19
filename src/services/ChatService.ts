@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.REACT_APP_BACKEND_API_URL || '/api'; // read the environment variable or use '/api' as a fallback
+import {fetchWithInterceptors} from "../utils/FetchInterceptors";
 
 export interface ChatEntity {
     chatId: number;
@@ -23,43 +23,27 @@ export enum ChatRole {
     function = 'function',
 }
 
-export const getAllChats = async (token: string | null): Promise<ChatEntity[]> => {
-    const response = await fetch(`${API_BASE_URL}/api/v1/console/chat`, {
+export const getAllChats = async (token: string | null): Promise<ChatEntity[] | any> => {
+    return await fetchWithInterceptors(`/api/v1/console/chat`, {
         headers: {
             'Authorization': `Bearer ${token}`
         }
     });
-    if (response.ok) {
-        return await response.json();
-    } else {
-        throw new Error('Failed to fetch chats');
-    }
 };
 export const getChatMessages = async (chatId: number, token: string | null): Promise<MessageEntity[]> => {
-    const response = await fetch(`${API_BASE_URL}/api/v1/console/chat/${chatId}`, {
+    return await fetchWithInterceptors(`/api/v1/console/chat/${chatId}`, {
         headers: {
             'Authorization': `Bearer ${token}`
         }
     });
-    if (response.ok) {
-        return await response.json();
-    } else {
-        throw new Error('Failed to fetch messages');
-    }
 };
 
 export const sendMessageToChat = async (chatId: number, message: string, token: string | null): Promise<void> => {
-    const response = await fetch(`${API_BASE_URL}/api/v1/console/chat/${chatId}`, {
+    return await fetchWithInterceptors(`/api/v1/console/chat/${chatId}`, {
         method: 'POST',
         body: message,
         headers: {
             'Authorization': `Bearer ${token}`
         },
     });
-
-    if (response.ok) {
-        return;
-    } else {
-        throw new Error('Failed to send message to chat');
-    }
 };

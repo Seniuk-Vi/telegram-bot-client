@@ -41,10 +41,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
         return localStorage.getItem('JWT');
     });
     useEffect(() => {
-        if (id !== null && token !== null) {
-            setIsAuthenticated(true);
-        } else {
+        if (id == null || token == null) {
             setIsAuthenticated(false);
+            localStorage.removeItem('JWT');
+            localStorage.removeItem('id');
+        } else {
+            setIsAuthenticated(true);
         }
     }, [id, token]);
     const authenticate = async (email: string, password: string) => {
